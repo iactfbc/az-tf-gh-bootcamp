@@ -4,11 +4,6 @@ variable "resource_groups" {
   }))
 }
 
-variable "resource_groups2" {
-  type = string
-  description = "Secondary rg"
-}
-
 variable "bc_vnet_name" {
   type = string
   description = "Bootcamp vNet Name"
