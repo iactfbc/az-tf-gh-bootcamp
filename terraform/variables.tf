@@ -3,3 +3,8 @@ variable "resource_groups" {
     location = string
   }))
 }
+
+variable "resource_groups2" {
+  type = string
+  description = "Secondary rg"
+}
