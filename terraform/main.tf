@@ -8,7 +8,7 @@ resource "azurerm_resource_group" "rg" {
 
 resource "azurerm_virtual_network" "bcvnet" {
   name                  = var.bc_vnet_name
-  location              = azurerm_resource_group.rg.location
+  location              = azurerm_resource_group.rg.location[0]
   resource_group_name   = azurerm_resource_group.rg.name
   address_space         = [var.bc_vnet_cidr]
 }
@@ -16,7 +16,7 @@ resource "azurerm_virtual_network" "bcvnet" {
 resource "azurerm_public_ip" "bastionpip" {
   name                = var.bc_bastion_pip_name
   resource_group_name = azurerm_resource_group.rg.name
-  location            = azurerm_resource_group.rg.location
+  location            = azurerm_resource_group.rg.location[0]
   allocation_method   = "Static"
   sku                 = "Standard"
 
@@ -28,14 +28,14 @@ resource "azurerm_public_ip" "bastionpip" {
 resource "azurerm_subnet" "bastionSubnet" {
   name                  = var.bc_bastion_name
   resource_group_name   = azurerm_resource_group.rg.name
-  location              = azurerm_resource_group.rg.location
+  location              = azurerm_resource_group.rg.location[0]
   virtual_network_name  = azurerm_virtual_network.bcvnet.name
   address_prefixes      = var.bc_bastion_address_space
 }
 
 resource "azurerm_bastion_host" "bcBastionHost" {
   name                = var.bc_bastion_host_name
-  location            = azurerm_resource_group.rg.location
+  location            = azurerm_resource_group.rg.location[0]
   resource_group_name = azurerm_resource_group.rg.name
 
   ip_configuration {
