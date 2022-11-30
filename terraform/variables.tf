@@ -1,7 +1,11 @@
 variable "resource_groups" {
-  type = map(object({
-    location = string
-  }))
+  type = string
+  description = "Bootcamp RG Name"
+}
+
+variable "bc_location" {
+  type = string
+  description = "Bootcamp resource region"
 }
 
 variable "bc_vnet_name" {
