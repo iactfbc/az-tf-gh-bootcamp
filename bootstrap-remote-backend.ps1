@@ -1,15 +1,16 @@
 # Authenticate to Azure Subscription
-# Connect-AzAccount -Environment AzureCloud -Subscription <subscription_guid>
+# Connect-AzAccount -Environment AzureCloud -Subscription 3ae16429-76d7-465e-baee-b0dfa0296fa3
 $location                 = 'westus2'
 $tfbackend_rg_name        = 'tfstate'
-$tfbackend_sa_name        = 'jrybergdemo'
+$tfbackend_sa_name        = 'rohernantfbc'
 $tfbackend_container_name = 'tfstate'
-$tf_sp_name               = 'dev-az-tf-gh-sp'
-$ghUsername               = 'devopsjesus'
-$ghPAT                    = '' # Pass in your GitHub Personal Access Token with repo & org access premissions
-$ghOrgName                = 'jrybergDemo'
+$tf_sp_name               = 'tf-bc-sp'
+$ghUsername               = 'rohernan'
+$ghPAT                    = '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' # Pass in your GitHub Personal Access Token with repo & org access premissions
+$ghOrgName                = 'iactfbc'
 $ghRepoName               = 'az-tf-gh-bootcamp'
 $ghRepoEnvironmentName    = 'Azure-Public-Dev'
+#tf-bc-pat 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
 
 $subscriptionId = (Get-AzContext).Subscription.Id
 $tenantId = (Get-AzContext).Tenant.Id
