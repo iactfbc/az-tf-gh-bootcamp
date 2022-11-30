@@ -6,11 +6,11 @@ $tfbackend_sa_name        = 'rohernantfbc'
 $tfbackend_container_name = 'tfstate'
 $tf_sp_name               = 'tf-bc-sp'
 $ghUsername               = 'rohernan'
-$ghPAT                    = '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' # Pass in your GitHub Personal Access Token with repo & org access premissions
+$ghPAT                    = '' # Pass in your GitHub Personal Access Token with repo & org access premissions
 $ghOrgName                = 'iactfbc'
 $ghRepoName               = 'az-tf-gh-bootcamp'
 $ghRepoEnvironmentName    = 'Azure-Public-Dev'
-#tf-bc-pat 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
+
 
 $subscriptionId = (Get-AzContext).Subscription.Id
 $tenantId = (Get-AzContext).Tenant.Id
