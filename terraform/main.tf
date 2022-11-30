@@ -26,9 +26,8 @@ resource "azurerm_public_ip" "bastionpip" {
 resource "azurerm_subnet" "bastionSubnet" {
   name                  = var.bc_bastion_name
   resource_group_name   = azurerm_resource_group.rg.name
-  location              = azurerm_resource_group.rg.location
   virtual_network_name  = azurerm_virtual_network.bcvnet.name
-  address_prefixes      = var.bc_bastion_address_space
+  address_prefixes      = [var.bc_bastion_address_space]
 }
 
 resource "azurerm_bastion_host" "bcBastionHost" {
