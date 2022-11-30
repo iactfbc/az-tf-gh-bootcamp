@@ -1,4 +1,4 @@
-resource_groups = "tfstate"
+resource_groups = "bc-tf-deploy"
 bc_location = "westus2"
 bc_vnet_name = "rh-bc-vnet"
 bc_vnet_cidr = "10.76.0.0/16"
