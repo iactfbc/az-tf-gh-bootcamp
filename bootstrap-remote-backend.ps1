@@ -10,10 +10,6 @@ $ghPAT                    = '' # Pass in your GitHub Personal Access Token with 
 $ghOrgName                = 'iactfbc'
 $ghRepoName               = 'az-tf-gh-bootcamp'
 $ghRepoEnvironmentName    = 'Azure-Public-Dev'
-<<<<<<< HEAD
-
-=======
->>>>>>> 7fe508322ed3940a0e454dfe5e5e31c54156804d
 
 $subscriptionId = (Get-AzContext).Subscription.Id
 $tenantId = (Get-AzContext).Tenant.Id
