@@ -103,7 +103,7 @@ resource "azurerm_windows_virtual_machine" "bcvm" {
   location            = azurerm_resource_group.rg.location
   size                = "Standard_F2"
   admin_username      = var.bc_vm_username
-  admin_password      = var.bc
+  admin_password      = var.bc_vm_password
   network_interface_ids = [
     azurerm_network_interface.bcvmnic.id,
   ]
