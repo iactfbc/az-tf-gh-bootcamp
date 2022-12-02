@@ -63,6 +63,18 @@ resource "azurerm_subnet" "bcprivendpoint" {
   enforce_private_link_service_network_policies = true
 }
 
+resource "azurerm_private_dns_zone" "bcprivdns" {
+  name                      = "privatelink.blob.core.windows.net"
+  resource_group_name       = azurerm_resource_group.rg.name 
+}
+
+resource "azurerm_private_dns_zone_virtual_network_link" "bcprivdnsvnetlink" {
+  name                      = var.bc_priv_dns_zone_vnet_link_name
+  resource_group_name       = azurerm_resource_group.rg.name
+  private_dns_zone_name     = azurerm_private_dns_zone.bcprivdns.name
+  virtual_network_id        = azurerm_virtual_network.bcvnet.id
+}
+
 resource "azurerm_private_endpoint" "bcpe" {
   name                      = "${azurerm_storage_account.bcsa.name}-pe"
   location                  = azurerm_resource_group.rg.location
