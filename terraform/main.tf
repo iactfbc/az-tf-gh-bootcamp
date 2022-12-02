@@ -79,8 +79,8 @@ resource "azurerm_private_endpoint" "bcpe" {
 
 resource "azurerm_subnet" "bcserversubnet" {
   name                        = var.bc_vm_subnet_name
-  resouresource_group_name    = azurerm_resource_group.rg.name
-  virtualvirtual_network_name = azurerm_virtual_network.bcvnet.name
+  resource_group_name         = azurerm_resource_group.rg.name
+  virtual_network_name        = azurerm_virtual_network.bcvnet.name
   address_prefixes            = [var.bc_vm_subnet_address]   
 }
 
