@@ -64,7 +64,7 @@ resource "azurerm_subnet" "bcprivendpoint" {
 }
 
 resource "azurerm_private_endpoint" "bcpe" {
-  name                      = "${azurerm_storageaccount.bcsa.name}-pe"
+  name                      = "${azurerm_storage_account.bcsa.name}-pe"
   location                  = azurerm_resource_group.rg.location
   resource_group_name       = azurerm_resource_group.rg.name
   subnet_id                 = azurerm_subnet.bcprivendpoint.id
@@ -78,7 +78,7 @@ resource "azurerm_private_endpoint" "bcpe" {
 }
 
 resource "azurerm_subnet" "bcserversubnet" {
-  name                        = var.bc_server_subnet_name
+  name                        = var.bc_vm_subnet_name
   resouresource_group_name    = azurerm_resource_group.rg.name
   virtualvirtual_network_name = azurerm_virtual_network.bcvnet.name
   address_prefixes            = [var.bc_vm_subnet_address]   
