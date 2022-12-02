@@ -42,3 +42,58 @@ variable "bc_bastion_host_ipconfig" {
   type = string
   description = "Bootcamp Bastion Host IP Configuration"
 }
+
+variable "bc_storage_account_name" {
+  type = string
+  description = "Bootcamp Storage Account with PE"
+}
+
+variable "bc_priv_endpoint_subnet_name" {
+  type = string
+  description = "Bootcamp Storage Account Private Endpoint Name"
+}
+
+variable "bc_priv_endpoint_subnet_address" {
+  type = string
+  description = "Bootcamp Storage Account Private Endpoint CIDR"
+}
+
+variable "bc_priv_endpoint" {
+  type = string
+  description = "Bootcamp Private Endpoint"
+}
+
+variable "bc_priv_dns_zone_group_name" {
+  type = string
+  description = "Bootcamp Private DNS Zone Name"
+}
+
+variable "bc_priv_dns_zone_vnet_link_name" {
+  type = string
+  description = "Bootcamp Private DNS Zone vNet Link Name"
+}
+
+variable "bc_vm_name" {
+  type = string
+  description = "Bootcamp VM for SA access via PE"
+}
+
+variable "bc_vm_username" {
+  type = string
+  description = "Bootcamp VM Username"
+}
+
+variable "bc_vm_password" {
+  type = string
+  description = "Bootcamp VM Password"
+}
+
+variable "bc_vm_subnet_name" {
+  type = string
+  description = "Bootcamp VM Subnet Name"
+}
+
+variable "bc_vm_subnet_address" {
+  type = string
+  description = "Bootcamp VM Subnet CIDR"
+}
